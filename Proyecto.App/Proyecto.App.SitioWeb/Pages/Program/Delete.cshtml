@@ -1,0 +1,11 @@
+﻿@page
+@model Proyecto.App.SitioWeb.Pages.Program.DeleteModel
+@{
+}
+<h1>Eliminar Proyecto</h1>
+<form method='post'>
+    <input type="hidden" asp-for="programa.programaId" />
+    <h2>Esta seguro de borrar el registro de @Model.programa.nombre ?</h2>
+    <input type="submit" value="Borrar" class="btn btn-danger" />
+    <a asp-page="/Program/List">Back to list</a>
+</form>

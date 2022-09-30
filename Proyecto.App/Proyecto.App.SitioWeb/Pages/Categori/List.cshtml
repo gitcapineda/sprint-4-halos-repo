@@ -1,0 +1,37 @@
+﻿@page
+@model Proyecto.App.SitioWeb.Pages.Categori.ListModelC
+@{
+}
+<h1>Listado de categorias</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre Categoria</th>
+            <th>Descripcion</th>
+            <th>Estado</th>
+
+            <th>Editar</th>
+            <th>Borrar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categoria in Model.categorias)
+        {
+            <tr>
+                <td>@categoria.nombreCategoria</td>
+                <td>@categoria.descripcion</td>
+                <td>@categoria.estado</td>
+
+                <td>
+                    <a class="btn btn-success" asp-page="./Update" asp-route-id="@categoria.categoriaId">Editar</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@categoria.categoriaId">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<td>
+    <a class="btn btn-primary" asp-page="./Create">Crear Categoria</a>
+</td>

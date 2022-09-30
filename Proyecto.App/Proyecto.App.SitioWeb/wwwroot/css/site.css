@@ -1,0 +1,61 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: powderblue;
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  color: midnightblue;
+  
+}
+
+h3{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: red;
+}
+
+.table
+{
+  background-color: rgb(236, 229, 229);
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead
+{
+  background-color: darkslategray;
+  border-bottom: solid 4px olive;
+  color: lightcyan;
+  text-transform: uppercase;
+}
+
+tr{
+  padding: 175px;
+}
+
+tr:nth-child(even)
+{
+  background-color: rgb(218, 213, 213);
+}
+
+tr:hover td
+{
+  background-color: snow;
+  color: darkslategray;
+}

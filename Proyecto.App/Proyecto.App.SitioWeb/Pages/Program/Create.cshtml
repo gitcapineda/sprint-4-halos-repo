@@ -1,0 +1,84 @@
+﻿@page
+@model Proyecto.App.SitioWeb.Pages.Program.CreateModel
+@using Proyecto.App.Dominio
+@{
+}
+<h1>Crear Proyecto</h1>
+<!-- Formulario de creacion de un cliente (cliente, categoria, fase, fechaRegistro, nombre, codigo, 
+tiempoEstimado, fechaEjecucion, costo, descripcion, estado)-->
+
+<form method='post'>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="programa.clienteId" class="control-label"></label>
+        <input asp-for="programa.clienteId" class="form-control" />
+        <span asp-validation-for="programa.clienteId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="programa.categoriaId" class="control-label"></label>
+        <input asp-for="programa.categoriaId" class="form-control" />
+        <span asp-validation-for="programa.categoriaId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="programa.faseId" class="control-label"></label>
+        <input asp-for="programa.faseId" class="form-control" />
+        <span asp-validation-for="programa.faseId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="programa.fechaRegistro" class="control-label"></label>
+        <input asp-for="programa.fechaRegistro" class="form-control" />
+        <span asp-validation-for="programa.fechaRegistro" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="programa.nombre" class="control-label"></label>
+        <input asp-for="programa.nombre" class="form-control" />
+        <span asp-validation-for="programa.nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="programa.codigo" class="control-label"></label>
+        <input asp-for="programa.codigo" class="form-control" />
+        <span asp-validation-for="programa.codigo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="programa.tiempoEstimado" class="control-label"></label>
+        <input asp-for="programa.tiempoEstimado" class="form-control" />
+        <span asp-validation-for="programa.tiempoEstimado" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="programa.fechaEjecucion" class="control-label"></label>
+        <input asp-for="programa.fechaEjecucion" class="form-control" />
+        <span asp-validation-for="programa.fechaEjecucion" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="programa.costo" class="control-label"></label>
+        <input asp-for="programa.costo" class="form-control" />
+        <span asp-validation-for="programa.costo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="programa.descripcion" class="control-label"></label>
+        <input asp-for="programa.descripcion" class="form-control" />
+        <span asp-validation-for="programa.descripcion" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="programa.estado" class="control-label" asp-items="Html.GetEnumSelectList<Estado>()"></label>
+        <select asp-for="programa.estado" class="form-control" asp-items="Html.GetEnumSelectList<Estado>()"></select>
+        <span asp-validation-for="programa.estado" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Crear" class="btn btn-primary" />
+    </div>
+
+</form>

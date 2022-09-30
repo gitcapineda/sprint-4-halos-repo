@@ -1,0 +1,47 @@
+﻿@page
+@model Proyecto.SitioWeb.App.Pages.ListModel
+@{
+}
+<h1>Listado de clientes</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>numDocumento</th>
+            <th>numTelefono</th>
+            <th>email</th>
+            <th>direccion</th>
+            <th>nacionalidad</th>
+            <th>estado</th>
+
+            <th>Editar</th>
+            <th>Borrar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model.clientes)
+        {
+            <tr>
+                <td>@cliente.nombre</td>
+                <td>@cliente.apellido</td>
+                <td>@cliente.numDocumento</td>
+                <td>@cliente.numTelefono</td>
+                <td>@cliente.email</td>
+                <td>@cliente.direccion</td>
+                <td>@cliente.nacionalidad</td>
+                <td>@cliente.estado</td>
+
+                <td>
+                    <a class="btn btn-success" asp-page="./Update" asp-route-id="@cliente.clienteId">Editar</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@cliente.clienteId">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<td>
+    <a class="btn btn-primary" asp-page="./Create">Crear Cliente</a>
+</td>

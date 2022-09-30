@@ -1,0 +1,71 @@
+﻿@page
+@model Proyecto.SitioWeb.App.Pages.CreateModel
+@using Proyecto.App.Dominio
+@{
+}
+<h1>Crear cliente</h1>
+<!-- Formulario de creacion de un cliente (fechaRegistro, nombre, apellido, 
+numDocumento, numTelefono, email, direccion, nacionalidad, estado)-->
+
+<form method='post'>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="cliente.fechaRegistro" class="control-label"></label>
+        <input asp-for="cliente.fechaRegistro" class="form-control" />
+        <span asp-validation-for="cliente.fechaRegistro" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="cliente.nombre" class="control-label"></label>
+        <input asp-for="cliente.nombre" class="form-control" />
+        <span asp-validation-for="cliente.nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="cliente.apellido" class="control-label"></label>
+        <input asp-for="cliente.apellido" class="form-control" />
+        <span asp-validation-for="cliente.apellido" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="cliente.numDocumento" class="control-label"></label>
+        <input asp-for="cliente.numDocumento" class="form-control" />
+        <span asp-validation-for="cliente.numDocumento" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="cliente.numTelefono" class="control-label"></label>
+        <input asp-for="cliente.numTelefono" class="form-control" />
+        <span asp-validation-for="cliente.numTelefono" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="cliente.email" class="control-label"></label>
+        <input asp-for="cliente.email" class="form-control" />
+        <span asp-validation-for="cliente.email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="cliente.direccion" class="control-label"></label>
+        <input asp-for="cliente.direccion" class="form-control" />
+        <span asp-validation-for="cliente.direccion" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="cliente.nacionalidad" class="control-label"></label>
+        <input asp-for="cliente.nacionalidad" class="form-control" />
+        <span asp-validation-for="cliente.nacionalidad" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="cliente.estado" class="control-label" asp-items="Html.GetEnumSelectList<Estado>()"></label>
+        <select asp-for="cliente.estado" class="form-control" asp-items="Html.GetEnumSelectList<Estado>()"></select>
+        <span asp-validation-for="cliente.estado" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Crear" class="btn btn-primary" />
+    </div>
+</form>

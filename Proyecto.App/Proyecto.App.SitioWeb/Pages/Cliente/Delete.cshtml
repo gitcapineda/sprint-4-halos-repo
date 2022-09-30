@@ -1,0 +1,12 @@
+﻿@page
+@model Proyecto.SitioWeb.App.Pages.DeleteModel
+@{
+}
+<h1>Eliminar Cliente</h1>
+<form method='post'>
+    <input type="hidden" asp-for="cliente.clienteId" />
+    <h2>Esta seguro de borrar el registro de @Model.cliente.nombre @Model.cliente.apellido ?</h2>
+    <h3>@Model.respuesta</h3>
+    <input type="submit" value="Borrar" class="btn btn-danger" />
+    <a asp-page="/Cliente/List">Back to list</a>
+</form>

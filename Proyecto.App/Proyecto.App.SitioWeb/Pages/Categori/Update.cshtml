@@ -1,0 +1,34 @@
+﻿@page
+@model Proyecto.App.SitioWeb.Pages.Categori.UpdateModel
+@using Proyecto.App.Dominio
+@{
+}
+<h1>Modificar Categoria</h1>
+<form method='post'>
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="categoria.nombreCategoria" class="control-label"></label>
+        <input asp-for="categoria.nombreCategoria" class="form-control" />
+        <span asp-validation-for="categoria.nombreCategoria" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="categoria.descripcion" class="control-label"></label>
+        <input asp-for="categoria.descripcion" class="form-control" />
+        <span asp-validation-for="categoria.descripcion" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="categoria.estado" class="control-label" asp-items="Html.GetEnumSelectList<Estado>()"></label>
+        <select asp-for="categoria.estado" class="form-control" asp-items="Html.GetEnumSelectList<Estado>()"></select>
+        <span asp-validation-for="categoria.estado" class="text-danger"></span>
+    </div>
+
+    <input type="hidden" asp-for="categoria.categoriaId" />
+
+    <div class="form-group">
+        <input type="submit" value="Modificar" class="btn btn-primary" />
+    </div>
+
+</form>

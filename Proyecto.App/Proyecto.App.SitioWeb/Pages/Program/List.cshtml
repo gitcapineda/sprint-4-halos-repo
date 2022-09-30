@@ -1,0 +1,52 @@
+﻿@page
+@model Proyecto.App.SitioWeb.Pages.Program.ListModel
+@{
+}
+<h1>Listado de Proyectos</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>cliente</th>
+            <th>categoria</th>
+            <th>fase</th>
+            <th>nombre</th>
+            <th>codigo</th>
+            <th>tiempoEstimado</th>
+            <th>fechaEjecucion</th>
+            <th>costo</th>
+            <th>descripcion</th>
+            <th>estado</th>
+
+            <th>Editar</th>
+            <th>Borrar</th>
+        </tr>
+    </thead>
+
+    <body>
+        @foreach (var programa in Model.programas)
+        {
+            <tr>
+                <td>@programa.clienteId</td>
+                <td>@programa.categoriaId</td>
+                <td>@programa.faseId</td>
+                <td>@programa.nombre</td>
+                <td>@programa.codigo</td>
+                <td>@programa.tiempoEstimado</td>
+                <td>@programa.fechaEjecucion</td>
+                <td>@programa.costo</td>
+                <td>@programa.descripcion</td>
+                <td>@programa.estado</td>
+
+                <td>
+                    <a class="btn btn-success" asp-page="./Update" asp-route-id="@programa.programaId">Editar</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@programa.programaId">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </body>
+</table>
+<td>
+    <a class="btn btn-primary" asp-page="./Create">Crear Proyecto</a>
+</td>
